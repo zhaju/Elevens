@@ -43,5 +43,9 @@ public class Card
     {
         return suit;
     }
+    @Override
+    public String toString(){
+        return rank.toString()+"of"+suit.toString();
+    }
 }
 

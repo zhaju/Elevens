@@ -7,7 +7,7 @@
  */
 public enum Suit
 {
-    CLUBS, DIAMONDS, HEARTS, SPADES; 
+    DIAMONDS, CLUBS, HEARTS, SPADES; 
     
     @Override
     public String toString(){

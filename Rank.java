@@ -27,6 +27,5 @@ public enum Rank
         else{
             return name().toLowerCase();
         }
-        
     }
 }
