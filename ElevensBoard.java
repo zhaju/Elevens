@@ -47,6 +47,16 @@ public class ElevensBoard extends Board{
     
     public boolean isLegal(List<Integer> selectedCards) {
         // TODO: implement isLegal
+        if (selectedCards.size()==2){
+            if (containsPairSum11(selectedCards)){
+                return true;
+            }
+        }
+        if (selectedCards.size()==3){
+            if (containsJQK(selectedCards)){
+                return true;
+            }
+        }
         return false;
     }
 
@@ -58,8 +68,11 @@ public class ElevensBoard extends Board{
      * @return true if there is a legal play left on the board;
      *         false otherwise.
      */
-    public boolean anotherPlayIsPossible() {
-       //TODO: implement anotherPlayIsPossible
+    public boolean anotherPlayIsPossible(List<Integer>selectedCards) {
+        //TODO: implement anotherPlayIsPossible
+        if (containsPairSum11(selectedCards) || !containsJQK(selectedCards)){
+            return true;
+        }
         return false;
     }
     
@@ -73,10 +86,19 @@ public class ElevensBoard extends Board{
      */
     private boolean containsPairSum11(List<Integer> selectedCards) {
         //TODO: implement containsPairSum11
+        int s = selectedCards.size();
+        for (int i=0; i<s; i++){
+            for (int j=i; j<s; j++){
+                int card1=cardAt(selectedCards.get(i)).getRank().getPointValue();
+                int card2=cardAt(selectedCards.get(j)).getRank().getPointValue();
+                if (card1+card2==11){
+                    return true;
+                }
+            }
+        }
         return false;
     }
     
-
     /**
      * Check for a JQK in the selected cards.
      * @param selectedCards selects a subset of this board.  It is list
@@ -87,6 +109,27 @@ public class ElevensBoard extends Board{
      */
     private boolean containsJQK(List<Integer> selectedCards) {
          //TODO: implement containsJQK
-        return false;
+         int s = selectedCards.size();
+         boolean jack = false;
+         boolean queen = false;
+         boolean king = false;
+        for (int i=0; i<s; i++){
+            String card1 = cardAt(selectedCards.get(i)).getRank().name();
+            if (card1.equals("JACK")){
+                jack = true;
+            }
+            if (card1.equals("QUEEN")){
+                queen = true;
+            }
+            if (card1.equals("KING")){
+                king = true;
+            }
+        }
+        if (jack && queen && king){
+            return true;
+        }
+        else {
+            return false;
+        }        
     }
 }
