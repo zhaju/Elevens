@@ -27,11 +27,8 @@ public class Deck
                 deck.add(new Card(r,s));
             }
         }
+        shuffle();
         size=deck.size();
-        //cards = new Card[size];
-        //for (int i=0; i<size; i++){
-        //    cards[i]=deck.get(i);
-        //}
     }
     public void perfectShuffle(){
         int k=0;
@@ -46,14 +43,12 @@ public class Deck
             k+=2;
         }
     }
-    public void selectionShuffle(){
+    public void shuffle(){
         for (int m=size-1; m<=1; m--){
             int r = m*(int)Math.random();
             Card temp  = deck.get(m);
             deck.set(m, deck.get(r));
             deck.set(r, temp);
-            //cards[m]=cards[r];
-            //cards[r]=temp;
         }
     }
     public boolean isEmpty(){
@@ -64,7 +59,7 @@ public class Deck
             return true;
         }
     }
-    public int size(){
+    public int getSize(){
         return size;
     }
     public Card deal(){

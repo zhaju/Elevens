@@ -33,7 +33,7 @@ public abstract class Board {
      */
     public Board(int size) {
         cards = new Card[size];
-        deck = new Deck();
+        deck = new Deck(Rank.values(), Suit.values());
         if (I_AM_DEBUGGING) {
             System.out.println(deck);
             System.out.println("----------");
