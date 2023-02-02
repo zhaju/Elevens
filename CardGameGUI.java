@@ -94,7 +94,7 @@ public class CardGameGUI extends JFrame implements ActionListener {
         totalGames = 0;
 
         // Initialize cardCoords using 5 cards per row
-        cardCoords = new Point[board.size()];      
+        cardCoords = new Point[board.size()];
         int x = LAYOUT_LEFT;
         int y = LAYOUT_TOP;
         for (int i = 0; i < cardCoords.length; i++) {
