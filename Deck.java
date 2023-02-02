@@ -27,8 +27,8 @@ public class Deck
                 deck.add(new Card(r,s));
             }
         }
-        shuffle();
         size=deck.size();
+        shuffle();
     }
     public void perfectShuffle(){
         int k=0;
@@ -45,7 +45,7 @@ public class Deck
     }
     public void shuffle(){
         for (int m=size-1; m>=1; m--){
-            int r = m*(int)Math.random();
+            int r = (int)(Math.random()*m);
             Card temp  = deck.get(m);
             deck.set(m, deck.get(r));
             deck.set(r, temp);

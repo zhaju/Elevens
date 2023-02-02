@@ -70,7 +70,7 @@ public class ElevensBoard extends Board{
      */
     public boolean anotherPlayIsPossible() {
         //TODO: implement anotherPlayIsPossible
-        if (containsPairSum11(cardIndexes()) && containsJQK(cardIndexes())){
+        if (containsPairSum11(cardIndexes()) || containsJQK(cardIndexes())){
             return true;
         }
         return false;
