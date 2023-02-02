@@ -44,7 +44,7 @@ public class Deck
         }
     }
     public void shuffle(){
-        for (int m=size-1; m<=1; m--){
+        for (int m=size-1; m>=1; m--){
             int r = m*(int)Math.random();
             Card temp  = deck.get(m);
             deck.set(m, deck.get(r));
