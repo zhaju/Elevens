@@ -68,9 +68,9 @@ public class ElevensBoard extends Board{
      * @return true if there is a legal play left on the board;
      *         false otherwise.
      */
-    public boolean anotherPlayIsPossible(List<Integer> cardIndexes) {
+    public boolean anotherPlayIsPossible() {
         //TODO: implement anotherPlayIsPossible
-        if (containsPairSum11(cardIndexes) && containsJQK(cardIndexes)){
+        if (containsPairSum11(cardIndexes()) && containsJQK(cardIndexes())){
             return true;
         }
         return false;
