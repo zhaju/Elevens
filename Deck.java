@@ -50,6 +50,7 @@ public class Deck
             deck.set(m, deck.get(r));
             deck.set(r, temp);
         }
+        size = deck.size();
     }
     public boolean isEmpty(){
         if (size==0){
